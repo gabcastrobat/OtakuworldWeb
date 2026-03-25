@@ -1,2 +1,4 @@
 com\mycompany\otakuworldweb\JakartaRestConfiguration.class
 com\mycompany\otakuworldweb\resources\JakartaEE10Resource.class
+Modelo\Persona.class
+Modelo\Usuario.class

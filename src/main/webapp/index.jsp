@@ -1,16 +1,13 @@
 <%@include file="/lib/header.jsp" %>
-<h1>Cuerpo de pagina</h1>
 <!<!--forrmularios-->
 
 <style>
-/* ════════════════════════════════════════════════
-   INDEX.JSP — Estilo streaming (Netflix/Crunchyroll)
+/* INDEX.JSP  Estilo streaming 
    Paleta del proyecto Java:
      bg #254252 | bg-dark #171c2d | orange #e37239
      peach #f9982f | cream #eab56f
-   ════════════════════════════════════════════════ */
-
-/* ── Hero Carousel ── */
+   
+/*  Hero Carousel ── */
 .hero-carousel { border-radius: 14px; overflow: hidden; margin-bottom: 2.5rem; position: relative; }
 .hero-carousel .carousel-item { height: 420px; position: relative; }
 .hero-bg {

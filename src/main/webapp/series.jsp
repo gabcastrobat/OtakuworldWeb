@@ -43,7 +43,7 @@
 
     <div class="col serie-item" data-titulo="one piece" data-genero="aventura acción">
         <div class="ow-card">
-            <div class="ow-card-img bg-c1">🏴‍☠️<span class="ow-card-badge badge-popular">POPULAR</span></div>
+            <div class="ow-card-img bg-c1"><img class="ow-cover" data-mal="21" alt="One Piece" loading="lazy"><span class="ow-card-badge badge-popular">POPULAR</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">One Piece</div>
                 <div class="ow-card-meta">Anime · 1000+ eps</div>
@@ -55,7 +55,7 @@
 
     <div class="col serie-item" data-titulo="naruto shippuden" data-genero="acción ninja">
         <div class="ow-card">
-            <div class="ow-card-img bg-c4">🍃<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c4"><img class="ow-cover" data-mal="1735" alt="Naruto Shippuden" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Naruto Shippuden</div>
                 <div class="ow-card-meta">Anime · 500 eps</div>
@@ -67,7 +67,7 @@
 
     <div class="col serie-item" data-titulo="attack on titan" data-genero="acción drama">
         <div class="ow-card">
-            <div class="ow-card-img bg-c3">⚔️<span class="ow-card-badge badge-popular">POPULAR</span></div>
+            <div class="ow-card-img bg-c3"><img class="ow-cover" data-mal="16498" alt="Attack on Titan" loading="lazy"><span class="ow-card-badge badge-popular">POPULAR</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Attack on Titan</div>
                 <div class="ow-card-meta">Anime · 89 eps</div>
@@ -79,7 +79,7 @@
 
     <div class="col serie-item" data-titulo="demon slayer" data-genero="acción fantasía">
         <div class="ow-card">
-            <div class="ow-card-img bg-c6">🌸<span class="ow-card-badge badge-nuevo">NUEVO</span></div>
+            <div class="ow-card-img bg-c6"><img class="ow-cover" data-mal="38000" alt="Demon Slayer" loading="lazy"><span class="ow-card-badge badge-nuevo">NUEVO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Demon Slayer</div>
                 <div class="ow-card-meta">Anime · 55 eps</div>
@@ -91,7 +91,7 @@
 
     <div class="col serie-item" data-titulo="my hero academia" data-genero="superhéroes acción">
         <div class="ow-card">
-            <div class="ow-card-img bg-c8">💥<span class="ow-card-badge badge-popular">POPULAR</span></div>
+            <div class="ow-card-img bg-c8"><img class="ow-cover" data-mal="31964" alt="My Hero Academia" loading="lazy"><span class="ow-card-badge badge-popular">POPULAR</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">My Hero Academia</div>
                 <div class="ow-card-meta">Anime · 138 eps</div>
@@ -103,7 +103,7 @@
 
     <div class="col serie-item" data-titulo="jujutsu kaisen" data-genero="acción sobrenatural">
         <div class="ow-card">
-            <div class="ow-card-img bg-c2">🌀<span class="ow-card-badge badge-nuevo">NUEVO</span></div>
+            <div class="ow-card-img bg-c2"><img class="ow-cover" data-mal="40748" alt="Jujutsu Kaisen" loading="lazy"><span class="ow-card-badge badge-nuevo">NUEVO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Jujutsu Kaisen</div>
                 <div class="ow-card-meta">Anime · 47 eps</div>
@@ -115,7 +115,7 @@
 
     <div class="col serie-item" data-titulo="spy x family" data-genero="comedia acción">
         <div class="ow-card">
-            <div class="ow-card-img bg-c5">🕵️<span class="ow-card-badge badge-nuevo">NUEVO</span></div>
+            <div class="ow-card-img bg-c5"><img class="ow-cover" data-mal="50265" alt="Spy x Family" loading="lazy"><span class="ow-card-badge badge-nuevo">NUEVO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Spy x Family</div>
                 <div class="ow-card-meta">Anime · 37 eps</div>
@@ -127,7 +127,7 @@
 
     <div class="col serie-item" data-titulo="death note" data-genero="thriller psicológico">
         <div class="ow-card">
-            <div class="ow-card-img bg-c7">💀<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c7"><img class="ow-cover" data-mal="1535" alt="Death Note" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Death Note</div>
                 <div class="ow-card-meta">Anime · 37 eps</div>
@@ -139,7 +139,7 @@
 
     <div class="col serie-item" data-titulo="fullmetal alchemist brotherhood" data-genero="aventura fantasía">
         <div class="ow-card">
-            <div class="ow-card-img bg-c9">⚗️<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c9"><img class="ow-cover" data-mal="5114" alt="Fullmetal Alchemist Brotherhood" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">FMA: Brotherhood</div>
                 <div class="ow-card-meta">Anime · 64 eps</div>
@@ -151,7 +151,7 @@
 
     <div class="col serie-item" data-titulo="bleach" data-genero="acción sobrenatural">
         <div class="ow-card">
-            <div class="ow-card-img bg-c1">🌙<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c1"><img class="ow-cover" data-mal="269" alt="Bleach" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Bleach</div>
                 <div class="ow-card-meta">Anime · 366 eps</div>
@@ -163,7 +163,7 @@
 
     <div class="col serie-item" data-titulo="dragon ball z" data-genero="acción aventura">
         <div class="ow-card">
-            <div class="ow-card-img bg-c3">🐉<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c3"><img class="ow-cover" data-mal="813" alt="Dragon Ball Z" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Dragon Ball Z</div>
                 <div class="ow-card-meta">Anime · 291 eps</div>
@@ -175,7 +175,7 @@
 
     <div class="col serie-item" data-titulo="hunter x hunter" data-genero="aventura acción">
         <div class="ow-card">
-            <div class="ow-card-img bg-c5">🎯<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c5"><img class="ow-cover" data-mal="11061" alt="Hunter x Hunter" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Hunter x Hunter</div>
                 <div class="ow-card-meta">Anime · 148 eps</div>
@@ -187,7 +187,7 @@
 
     <div class="col serie-item" data-titulo="chainsaw man" data-genero="acción horror">
         <div class="ow-card">
-            <div class="ow-card-img bg-c2">🪚<span class="ow-card-badge badge-nuevo">NUEVO</span></div>
+            <div class="ow-card-img bg-c2"><img class="ow-cover" data-mal="44511" alt="Chainsaw Man" loading="lazy"><span class="ow-card-badge badge-nuevo">NUEVO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Chainsaw Man</div>
                 <div class="ow-card-meta">Anime · 12 eps</div>

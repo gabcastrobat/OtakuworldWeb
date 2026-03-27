@@ -1,0 +1,164 @@
+/* Catálogo (series / películas) — coherente con index.jsp */
+:root {
+    --ow-bg: #254252;
+    --ow-bg-dark: #171c2d;
+    --ow-orange: #e37239;
+    --ow-peach: #f9982f;
+    --ow-cream: #eab56f;
+    --ow-text: #f0e6d3;
+    --ow-muted: rgba(200, 200, 208, 0.75);
+}
+
+.ow-search-bar {
+    background: var(--ow-bg-dark);
+    border: 1px solid var(--ow-peach);
+    color: var(--ow-cream);
+    border-radius: 10px;
+    padding: 0.55rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+.ow-search-bar::placeholder { color: rgba(234, 181, 111, 0.4); }
+.ow-search-bar:focus {
+    border-color: var(--ow-orange);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(227, 114, 57, 0.15);
+}
+.btn-ow-clear {
+    background: transparent;
+    color: var(--ow-cream);
+    border: 1px solid rgba(234, 181, 111, 0.4);
+    border-radius: 10px;
+    padding: 0.55rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+.btn-ow-clear:hover { border-color: var(--ow-cream); }
+
+.ow-filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.ow-filter-tab {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(227, 114, 57, 0.25);
+    color: var(--ow-cream);
+    border-radius: 20px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+.ow-filter-tab:hover,
+.ow-filter-tab.active {
+    background: rgba(227, 114, 57, 0.2);
+    border-color: var(--ow-orange);
+    color: #fff;
+}
+
+.ow-card {
+    background: var(--ow-bg);
+    border: 1px solid rgba(227, 114, 57, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    cursor: pointer;
+    height: 100%;
+}
+.ow-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--ow-orange);
+}
+
+.ow-card-img {
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+.ow-card-img .ow-cover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.ow-card-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    z-index: 1;
+}
+.badge-nuevo { background: var(--ow-orange); color: var(--ow-bg-dark); }
+.badge-popular { background: #c0392b; color: #fff; }
+.badge-clasico { background: #2c3e50; color: var(--ow-cream); border: 1px solid var(--ow-cream); }
+
+.ow-card-body { padding: 0.8rem 0.9rem 1rem; }
+.ow-card-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ow-cream);
+    margin-bottom: 0.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ow-card-meta { font-size: 0.78rem; color: rgba(234, 181, 111, 0.6); margin-bottom: 0.5rem; }
+.ow-genre-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    background: rgba(227, 114, 57, 0.15);
+    border: 1px solid rgba(227, 114, 57, 0.3);
+    color: var(--ow-peach);
+    border-radius: 8px;
+    padding: 1px 8px;
+    margin: 1px;
+}
+.ow-card-btn {
+    display: block;
+    margin-top: 0.7rem;
+    background: transparent;
+    border: 1px solid var(--ow-orange);
+    color: var(--ow-orange);
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.3rem 0;
+    text-align: center;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+.ow-card-btn:hover {
+    background: var(--ow-orange);
+    color: var(--ow-bg-dark);
+}
+
+.bg-c1 { background: linear-gradient(135deg, #1a3a4a, #254252); }
+.bg-c2 { background: linear-gradient(135deg, #2a1a3a, #1a1040); }
+.bg-c3 { background: linear-gradient(135deg, #3a1a1a, #2a1010); }
+.bg-c4 { background: linear-gradient(135deg, #1a2a3a, #0d1f2d); }
+.bg-c5 { background: linear-gradient(135deg, #2a3a1a, #162010); }
+.bg-c6 { background: linear-gradient(135deg, #3a2a1a, #201408); }
+.bg-c7 { background: linear-gradient(135deg, #1a1a3a, #0d0d20); }
+.bg-c8 { background: linear-gradient(135deg, #3a1a2a, #201018); }
+.bg-c9 { background: linear-gradient(135deg, #1a3a3a, #0d2020); }
+.bg-c10 { background: linear-gradient(135deg, #2a2a1a, #181800); }
+
+.ow-no-results {
+    display: none;
+    color: var(--ow-cream);
+    text-align: center;
+    padding: 2rem 0;
+    opacity: 0.6;
+}
+.ow-no-results.show { display: block; }

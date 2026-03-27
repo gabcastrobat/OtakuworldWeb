@@ -12,16 +12,22 @@
 .hero-carousel .carousel-item { height: 420px; position: relative; }
 .hero-bg {
     position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 7rem;
+}
+.hero-bg .hero-cover {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 .hero-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(90deg, rgba(23,28,45,0.92) 0%, rgba(23,28,45,0.3) 60%, transparent 100%);
+    z-index: 1;
 }
 .hero-content {
     position: absolute; bottom: 0; left: 0; padding: 2.5rem;
     z-index: 2; max-width: 520px;
+    pointer-events: auto;
 }
 .hero-badge {
     display: inline-block;
@@ -57,6 +63,9 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon { filter: drop-shadow(0 0 3px rgba(0,0,0,0.8)); }
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next,
+.hero-carousel .carousel-indicators { z-index: 3; }
 
 /* ── Section titles ── */
 .section-title {
@@ -86,14 +95,20 @@
 }
 .ow-card-img {
     height: 160px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3.5rem;
     position: relative;
+    overflow: hidden;
+}
+.ow-card-img .ow-cover {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 .ow-card-badge {
     position: absolute; top: 8px; left: 8px;
     font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px;
     padding: 2px 8px; border-radius: 10px;
+    z-index: 1;
 }
 .badge-nuevo { background: var(--ow-orange); color: var(--ow-bg-dark); }
 .badge-popular { background: #c0392b; color: #fff; }
@@ -219,7 +234,7 @@
 
         <!-- Slide 1 -->
         <div class="carousel-item active">
-            <div class="hero-bg bg-c3">⚔️</div>
+            <div class="hero-bg bg-c3"><img class="hero-cover ow-cover" data-mal="16498" alt="" loading="eager"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <span class="hero-badge">🔥 TENDENCIA</span>
@@ -233,7 +248,7 @@
 
         <!-- Slide 2 -->
         <div class="carousel-item">
-            <div class="hero-bg bg-c2">🌀</div>
+            <div class="hero-bg bg-c2"><img class="hero-cover ow-cover" data-mal="40748" alt="" loading="lazy"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <span class="hero-badge">✨ ESTRENO</span>
@@ -247,7 +262,7 @@
 
         <!-- Slide 3 (Película) -->
         <div class="carousel-item">
-            <div class="hero-bg bg-c5">🌸</div>
+            <div class="hero-bg bg-c5"><img class="hero-cover ow-cover" data-mal="32281" alt="" loading="lazy"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <span class="hero-badge">🎬 PELÍCULA</span>
@@ -261,7 +276,7 @@
 
         <!-- Slide 4 -->
         <div class="carousel-item">
-            <div class="hero-bg bg-c7">💀</div>
+            <div class="hero-bg bg-c7"><img class="hero-cover ow-cover" data-mal="1535" alt="" loading="lazy"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <span class="hero-badge">🏆 CLÁSICO</span>
@@ -302,7 +317,7 @@
     <div class="col serie-item" data-titulo="One Piece" data-genero="Aventura, Acción">
         <div class="ow-card">
             <div class="ow-card-img bg-c1">
-                🏴‍☠️
+                <img class="ow-cover" data-mal="21" alt="One Piece" loading="lazy">
                 <span class="ow-card-badge badge-popular">POPULAR</span>
             </div>
             <div class="ow-card-body">
@@ -318,7 +333,7 @@
     <div class="col serie-item" data-titulo="Naruto Shippuden" data-genero="Acción, Ninja">
         <div class="ow-card">
             <div class="ow-card-img bg-c4">
-                🍃
+                <img class="ow-cover" data-mal="1735" alt="Naruto Shippuden" loading="lazy">
                 <span class="ow-card-badge badge-clasico">CLÁSICO</span>
             </div>
             <div class="ow-card-body">
@@ -334,7 +349,7 @@
     <div class="col serie-item" data-titulo="Attack on Titan" data-genero="Acción, Drama">
         <div class="ow-card">
             <div class="ow-card-img bg-c3">
-                ⚔️
+                <img class="ow-cover" data-mal="16498" alt="Attack on Titan" loading="lazy">
                 <span class="ow-card-badge badge-popular">POPULAR</span>
             </div>
             <div class="ow-card-body">
@@ -350,7 +365,7 @@
     <div class="col serie-item" data-titulo="Demon Slayer" data-genero="Acción, Fantasía">
         <div class="ow-card">
             <div class="ow-card-img bg-c6">
-                🌸
+                <img class="ow-cover" data-mal="38000" alt="Demon Slayer" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
@@ -366,7 +381,7 @@
     <div class="col serie-item" data-titulo="My Hero Academia" data-genero="Superhéroes, Acción">
         <div class="ow-card">
             <div class="ow-card-img bg-c8">
-                💥
+                <img class="ow-cover" data-mal="31964" alt="My Hero Academia" loading="lazy">
                 <span class="ow-card-badge badge-popular">POPULAR</span>
             </div>
             <div class="ow-card-body">
@@ -382,7 +397,7 @@
     <div class="col serie-item" data-titulo="Jujutsu Kaisen" data-genero="Acción, Sobrenatural">
         <div class="ow-card">
             <div class="ow-card-img bg-c2">
-                🌀
+                <img class="ow-cover" data-mal="40748" alt="Jujutsu Kaisen" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
@@ -398,7 +413,7 @@
     <div class="col serie-item" data-titulo="Death Note" data-genero="Thriller, Psicológico">
         <div class="ow-card">
             <div class="ow-card-img bg-c7">
-                💀
+                <img class="ow-cover" data-mal="1535" alt="Death Note" loading="lazy">
                 <span class="ow-card-badge badge-clasico">CLÁSICO</span>
             </div>
             <div class="ow-card-body">
@@ -414,7 +429,7 @@
     <div class="col serie-item" data-titulo="Fullmetal Alchemist: Brotherhood" data-genero="Aventura, Fantasía">
         <div class="ow-card">
             <div class="ow-card-img bg-c9">
-                ⚗️
+                <img class="ow-cover" data-mal="5114" alt="Fullmetal Alchemist Brotherhood" loading="lazy">
                 <span class="ow-card-badge badge-clasico">CLÁSICO</span>
             </div>
             <div class="ow-card-body">
@@ -430,7 +445,7 @@
     <div class="col serie-item" data-titulo="Chainsaw Man" data-genero="Acción, Horror">
         <div class="ow-card">
             <div class="ow-card-img bg-c10">
-                🪚
+                <img class="ow-cover" data-mal="44511" alt="Chainsaw Man" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
@@ -446,7 +461,7 @@
     <div class="col serie-item" data-titulo="Spy x Family" data-genero="Comedia, Acción">
         <div class="ow-card">
             <div class="ow-card-img bg-c5">
-                🕵️
+                <img class="ow-cover" data-mal="50265" alt="Spy x Family" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
@@ -485,7 +500,7 @@
     <div class="col peli-item" data-titulo="Your Name" data-genero="Romance, Fantasía">
         <div class="ow-card">
             <div class="ow-card-img bg-c5">
-                🌠
+                <img class="ow-cover" data-mal="32281" alt="Your Name" loading="lazy">
                 <span class="ow-card-badge badge-popular">POPULAR</span>
             </div>
             <div class="ow-card-body">
@@ -501,7 +516,7 @@
     <div class="col peli-item" data-titulo="Akira" data-genero="Ciencia ficción, Acción">
         <div class="ow-card">
             <div class="ow-card-img bg-c7">
-                🏍️
+                <img class="ow-cover" data-mal="572" alt="Akira" loading="lazy">
                 <span class="ow-card-badge badge-clasico">CLÁSICO</span>
             </div>
             <div class="ow-card-body">
@@ -517,7 +532,7 @@
     <div class="col peli-item" data-titulo="El viaje de Chihiro" data-genero="Fantasía, Aventura">
         <div class="ow-card">
             <div class="ow-card-img bg-c9">
-                🐉
+                <img class="ow-cover" data-mal="199" alt="El viaje de Chihiro" loading="lazy">
                 <span class="ow-card-badge badge-clasico">CLÁSICO</span>
             </div>
             <div class="ow-card-body">
@@ -533,7 +548,7 @@
     <div class="col peli-item" data-titulo="Demon Slayer: Mugen Train" data-genero="Acción, Fantasía">
         <div class="ow-card">
             <div class="ow-card-img bg-c3">
-                🚂
+                <img class="ow-cover" data-mal="40456" alt="Demon Slayer Mugen Train" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
@@ -549,7 +564,7 @@
     <div class="col peli-item" data-titulo="One Piece Film Red" data-genero="Aventura, Acción">
         <div class="ow-card">
             <div class="ow-card-img bg-c6">
-                🎵
+                <img class="ow-cover" data-mal="49365" alt="One Piece Film Red" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
@@ -565,7 +580,7 @@
     <div class="col peli-item" data-titulo="Suzume" data-genero="Aventura, Romance">
         <div class="ow-card">
             <div class="ow-card-img bg-c4">
-                🚪
+                <img class="ow-cover" data-mal="51721" alt="Suzume" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
@@ -581,7 +596,7 @@
     <div class="col peli-item" data-titulo="Princess Mononoke" data-genero="Fantasía, Aventura">
         <div class="ow-card">
             <div class="ow-card-img bg-c5">
-                🐺
+                <img class="ow-cover" data-mal="164" alt="Princess Mononoke" loading="lazy">
                 <span class="ow-card-badge badge-clasico">CLÁSICO</span>
             </div>
             <div class="ow-card-body">
@@ -597,7 +612,7 @@
     <div class="col peli-item" data-titulo="Jujutsu Kaisen 0" data-genero="Acción, Sobrenatural">
         <div class="ow-card">
             <div class="ow-card-img bg-c2">
-                👁️
+                <img class="ow-cover" data-mal="48561" alt="Jujutsu Kaisen 0" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">

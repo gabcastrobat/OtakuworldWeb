@@ -39,7 +39,7 @@
 
     <div class="col peli-item" data-titulo="your name" data-genero="romance fantasía">
         <div class="ow-card">
-            <div class="ow-card-img bg-c5">🌠<span class="ow-card-badge badge-popular">POPULAR</span></div>
+            <div class="ow-card-img bg-c5"><img class="ow-cover" data-mal="32281" alt="Your Name" loading="lazy"><span class="ow-card-badge badge-popular">POPULAR</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Your Name</div>
                 <div class="ow-card-meta">Anime · 2016</div>
@@ -51,7 +51,7 @@
 
     <div class="col peli-item" data-titulo="akira" data-genero="sci-fi acción">
         <div class="ow-card">
-            <div class="ow-card-img bg-c7">🏍️<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c7"><img class="ow-cover" data-mal="572" alt="Akira" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Akira</div>
                 <div class="ow-card-meta">Anime · 1988</div>
@@ -63,7 +63,7 @@
 
     <div class="col peli-item" data-titulo="el viaje de chihiro" data-genero="fantasía aventura">
         <div class="ow-card">
-            <div class="ow-card-img bg-c9">🐉<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c9"><img class="ow-cover" data-mal="199" alt="El viaje de Chihiro" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">El viaje de Chihiro</div>
                 <div class="ow-card-meta">Anime · 2001</div>
@@ -75,7 +75,7 @@
 
     <div class="col peli-item" data-titulo="demon slayer mugen train" data-genero="acción fantasía">
         <div class="ow-card">
-            <div class="ow-card-img bg-c3">🚂<span class="ow-card-badge badge-nuevo">NUEVO</span></div>
+            <div class="ow-card-img bg-c3"><img class="ow-cover" data-mal="40456" alt="Demon Slayer Mugen Train" loading="lazy"><span class="ow-card-badge badge-nuevo">NUEVO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">DS: Mugen Train</div>
                 <div class="ow-card-meta">Anime · 2020</div>
@@ -87,7 +87,7 @@
 
     <div class="col peli-item" data-titulo="one piece film red" data-genero="aventura acción">
         <div class="ow-card">
-            <div class="ow-card-img bg-c6">🎵<span class="ow-card-badge badge-nuevo">NUEVO</span></div>
+            <div class="ow-card-img bg-c6"><img class="ow-cover" data-mal="49365" alt="One Piece Film Red" loading="lazy"><span class="ow-card-badge badge-nuevo">NUEVO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">One Piece Film Red</div>
                 <div class="ow-card-meta">Anime · 2022</div>
@@ -99,7 +99,7 @@
 
     <div class="col peli-item" data-titulo="jujutsu kaisen 0" data-genero="acción sobrenatural">
         <div class="ow-card">
-            <div class="ow-card-img bg-c2">👁️<span class="ow-card-badge badge-nuevo">NUEVO</span></div>
+            <div class="ow-card-img bg-c2"><img class="ow-cover" data-mal="48561" alt="Jujutsu Kaisen 0" loading="lazy"><span class="ow-card-badge badge-nuevo">NUEVO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Jujutsu Kaisen 0</div>
                 <div class="ow-card-meta">Anime · 2021</div>
@@ -111,7 +111,7 @@
 
     <div class="col peli-item" data-titulo="suzume" data-genero="aventura romance">
         <div class="ow-card">
-            <div class="ow-card-img bg-c4">🚪<span class="ow-card-badge badge-nuevo">NUEVO</span></div>
+            <div class="ow-card-img bg-c4"><img class="ow-cover" data-mal="51721" alt="Suzume" loading="lazy"><span class="ow-card-badge badge-nuevo">NUEVO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Suzume</div>
                 <div class="ow-card-meta">Anime · 2022</div>
@@ -123,7 +123,7 @@
 
     <div class="col peli-item" data-titulo="princess mononoke" data-genero="fantasía aventura">
         <div class="ow-card">
-            <div class="ow-card-img bg-c5">🐺<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c5"><img class="ow-cover" data-mal="164" alt="Princess Mononoke" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Princess Mononoke</div>
                 <div class="ow-card-meta">Anime · 1997</div>
@@ -135,7 +135,7 @@
 
     <div class="col peli-item" data-titulo="nausicaä del valle del viento" data-genero="sci-fi aventura">
         <div class="ow-card">
-            <div class="ow-card-img bg-c10">🌬️<span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
+            <div class="ow-card-img bg-c10"><img class="ow-cover" data-mal="81" alt="Nausicaä del Valle del viento" loading="lazy"><span class="ow-card-badge badge-clasico">CLÁSICO</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Nausicaä del Valle</div>
                 <div class="ow-card-meta">Anime · 1984</div>
@@ -147,7 +147,7 @@
 
     <div class="col peli-item" data-titulo="kimi no na wa" data-genero="romance fantasía">
         <div class="ow-card">
-            <div class="ow-card-img bg-c8">✨<span class="ow-card-badge badge-popular">POPULAR</span></div>
+            <div class="ow-card-img bg-c8"><img class="ow-cover" data-mal="32281" alt="Kimi no Na wa" loading="lazy"><span class="ow-card-badge badge-popular">POPULAR</span></div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Kimi no Na wa</div>
                 <div class="ow-card-meta">Anime · 2016</div>

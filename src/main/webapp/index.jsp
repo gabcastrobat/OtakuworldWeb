@@ -1,12 +1,13 @@
 <%@include file="/lib/header.jsp" %>
-<!<!--forrmularios-->
+<!-- Formularios -->
 
 <style>
-/* INDEX.JSP  Estilo streaming 
+/* INDEX.JSP  Estilo streaming
    Paleta del proyecto Java:
      bg #254252 | bg-dark #171c2d | orange #e37239
      peach #f9982f | cream #eab56f
-   
+*/
+
 /*  Hero Carousel ── */
 .hero-carousel { border-radius: 14px; overflow: hidden; margin-bottom: 2.5rem; position: relative; }
 .hero-carousel .carousel-item { height: 420px; position: relative; }

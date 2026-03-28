@@ -21,16 +21,16 @@
 <!-- Búsqueda + filtros -->
 <div class="d-flex flex-wrap gap-2 mb-3">
     <input class="ow-search-bar" style="max-width:340px" type="text" id="busqPelis"
-           placeholder="Buscar pelicula por titulo o genero..." oninput="filtrarPelis()">
+           placeholder="Buscar película por título o género..." oninput="filtrarPelis()">
     <button class="btn-ow-clear" onclick="limpiarPelis()">Limpiar</button>
 </div>
 
 <div class="ow-filter-tabs">
     <button class="ow-filter-tab active" onclick="filtroGenero(this,'')">Todas</button>
-    <button class="ow-filter-tab" onclick="filtroGenero(this,'Accion')">💥 Acción</button>
+    <button class="ow-filter-tab" onclick="filtroGenero(this,'Acción')">💥 Acción</button>
     <button class="ow-filter-tab" onclick="filtroGenero(this,'Aventura')">🗺 Aventura</button>
     <button class="ow-filter-tab" onclick="filtroGenero(this,'Romance')">🌸 Romance</button>
-    <button class="ow-filter-tab" onclick="filtroGenero(this,'Fantasia')">🐉 Fantasía</button>
+    <button class="ow-filter-tab" onclick="filtroGenero(this,'Fantasía')">🐉 Fantasía</button>
     <button class="ow-filter-tab" onclick="filtroGenero(this,'Sci-Fi')">🚀 Sci-Fi</button>
 </div>
 

@@ -22,17 +22,29 @@
 <!-- Búsqueda + filtros -->
 <div class="d-flex flex-wrap gap-2 mb-3">
     <input class="ow-search-bar" style="max-width:340px" type="text" id="busqPelis"
+< codex/fix-grammatical-and-syntax-errors-7x4lyz
            placeholder="Buscar pel&iacute;cula por t&iacute;tulo o g&eacute;nero..." oninput="filtrarPelis()">
+=======
+           placeholder="Buscar película por título o género..." oninput="filtrarPelis()">
+> main
     <button class="btn-ow-clear" onclick="limpiarPelis()">Limpiar</button>
 </div>
 
 <div class="ow-filter-tabs">
     <button class="ow-filter-tab active" onclick="filtroGenero(this,'')">Todas</button>
+< codex/fix-grammatical-and-syntax-errors-7x4lyz
     <button class="ow-filter-tab" onclick="filtroGenero(this,'Acción')">Acci&oacute;n</button>
     <button class="ow-filter-tab" onclick="filtroGenero(this,'Aventura')">Aventura</button>
     <button class="ow-filter-tab" onclick="filtroGenero(this,'Romance')">Romance</button>
     <button class="ow-filter-tab" onclick="filtroGenero(this,'Fantasía')">Fantas&iacute;a</button>
     <button class="ow-filter-tab" onclick="filtroGenero(this,'ciencia ficción')">Ciencia ficci&oacute;n</button>
+=======
+    <button class="ow-filter-tab" onclick="filtroGenero(this,'Acción')">💥 Acción</button>
+    <button class="ow-filter-tab" onclick="filtroGenero(this,'Aventura')">🗺 Aventura</button>
+    <button class="ow-filter-tab" onclick="filtroGenero(this,'Romance')">🌸 Romance</button>
+    <button class="ow-filter-tab" onclick="filtroGenero(this,'Fantasía')">🐉 Fantasía</button>
+    <button class="ow-filter-tab" onclick="filtroGenero(this,'Sci-Fi')">🚀 Sci-Fi</button>
+> main
 </div>
 
 <!-- Grid — datos de Pantalla.java datosPeliculas[][] -->

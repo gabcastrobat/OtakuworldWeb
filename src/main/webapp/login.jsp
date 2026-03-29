@@ -5,9 +5,15 @@
     <div class="auth-card">
 
         <div class="auth-brand">OtakuWorld</div>
+< codex/fix-grammatical-and-syntax-errors-7x4lyz
         <div class="auth-subtitle">Inicio de sesi&oacute;n</div>
 
         <div class="ow-alert" id="alertaLogin">Usuario o contrase&ntilde;a incorrectos.</div>
+=======
+        <div class="auth-subtitle">Inicio de sesión</div>
+ 
+        <div class="ow-alert" id="alertaLogin">Usuario o contraseña incorrectos.</div>
+> main
 
         <form id="loginForm" onsubmit="validarLogin(event)">
 
@@ -18,7 +24,11 @@
             </div>
 
             <div class="mb-3">
+< codex/fix-grammatical-and-syntax-errors-7x4lyz
                 <label for="contrasena" class="form-label">Contrase&ntilde;a</label>
+=======
+                <label for="contrasena" class="form-label">Contraseña</label>
+> main
                 <div class="pass-wrap">
                     <input type="password" class="form-control" id="contrasena"
                            name="contrasena" placeholder="* * * * * * * *"
@@ -46,8 +56,13 @@
         </button>
 
         <a href="#" style="display:block; text-align:center; color:var(--ow-peach); font-size:.85rem; margin-top:1rem; opacity:.8; text-decoration:none;"
+< codex/fix-grammatical-and-syntax-errors-7x4lyz
            onclick="alert('Funci&oacute;n de recuperaci&oacute;n en construcci&oacute;n.'); return false;">
             Olvid&eacute; mi contrase&ntilde;a
+=======
+           onclick="alert('Función de recuperación en construcción.'); return false;">
+            Olvidé mi contraseña
+> main
         </a>
 
     </div>

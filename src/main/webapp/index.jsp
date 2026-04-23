@@ -1,46 +1,49 @@
 <%@include file="/lib/header.jsp" %>
-<!<!--forrmularios-->
+<!-- Inicio -->
 
 <style>
-/* INDEX.JSP  Estilo streaming 
-   Paleta del proyecto Java:
-     bg #254252 | bg-dark #171c2d | orange #e37239
-     peach #f9982f | cream #eab56f
-   
-/*  Hero Carousel ── */
 .hero-carousel { border-radius: 14px; overflow: hidden; margin-bottom: 2.5rem; position: relative; }
-.hero-carousel .carousel-item { height: 420px; position: relative; }
+.hero-carousel .carousel-item { min-height: 260px; height: clamp(260px, 52vw, 440px); position: relative; }
 .hero-bg {
     position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 7rem;
+}
+.hero-bg .hero-cover {
+    position: absolute; inset: 0;   
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
 }
 .hero-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(90deg, rgba(23,28,45,0.92) 0%, rgba(23,28,45,0.3) 60%, transparent 100%);
+    z-index: 1;
 }
 .hero-content {
     position: absolute; bottom: 0; left: 0; padding: 2.5rem;
     z-index: 2; max-width: 520px;
+    pointer-events: auto;
 }
 .hero-badge {
+    font-family: var(--ow-font-text);
     display: inline-block;
     background: var(--ow-orange);
     color: var(--ow-bg-dark);
-    font-size: 0.7rem; font-weight: 700;
+    font-size: 0.72rem; font-weight: 700;
     padding: 2px 10px; border-radius: 12px;
     letter-spacing: 1px; margin-bottom: 0.6rem;
 }
 .hero-title {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: var(--ow-font-display);
     font-size: 2.4rem; font-weight: 700;
     color: #fff; line-height: 1.1;
     margin-bottom: 0.5rem;
 }
-.hero-meta { color: var(--ow-cream); font-size: 0.88rem; margin-bottom: 1rem; }
-.hero-desc { color: rgba(240,230,211,0.8); font-size: 0.9rem; margin-bottom: 1.2rem; }
+.hero-meta { font-family: var(--ow-font-text); color: var(--ow-cream); font-size: 0.9rem; margin-bottom: 1rem; }
+.hero-desc { font-family: var(--ow-font-text); color: rgba(240,230,211,0.88); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.2rem; }
 
 .btn-hero-primary {
+    font-family: var(--ow-font-text);
     background: var(--ow-orange); color: var(--ow-bg-dark);
     border: none; border-radius: 8px; font-weight: 700;
     padding: 0.55rem 1.4rem; font-size: 0.95rem;
@@ -48,6 +51,7 @@
 }
 .btn-hero-primary:hover { background: var(--ow-peach); }
 .btn-hero-sec {
+    font-family: var(--ow-font-text);
     background: rgba(255,255,255,0.12); color: #fff;
     border: 1px solid rgba(255,255,255,0.3); border-radius: 8px;
     font-weight: 600; padding: 0.55rem 1.2rem; font-size: 0.9rem;
@@ -57,19 +61,21 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon { filter: drop-shadow(0 0 3px rgba(0,0,0,0.8)); }
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next,
+.hero-carousel .carousel-indicators { z-index: 3; }
 
 /* ── Section titles ── */
 .section-title {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: var(--ow-font-display);
     font-size: 1.3rem; font-weight: 700;
     color: var(--ow-orange);
     border-left: 3px solid var(--ow-peach);
     padding-left: 0.7rem;
     margin-bottom: 1.2rem;
 }
-.section-sub { font-size: 0.8rem; color: var(--ow-cream); font-weight: 400; margin-left: 0.5rem; }
+.section-sub { font-family: var(--ow-font-text); font-size: 0.85rem; color: var(--ow-cream); font-weight: 500; margin-left: 0.5rem; }
 
-/* ── Cards — Opción #2 "Card con badge" ── */
 .ow-card {
     background: var(--ow-bg);
     border: 1px solid rgba(227,114,57,0.2);
@@ -85,15 +91,24 @@
     border-color: var(--ow-orange);
 }
 .ow-card-img {
-    height: 160px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3.5rem;
     position: relative;
+    overflow: hidden;
+    aspect-ratio: 2 / 3;
+    width: 100%;
+    max-height: 320px;
+}
+.ow-card-img .ow-cover {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
 }
 .ow-card-badge {
     position: absolute; top: 8px; left: 8px;
     font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px;
     padding: 2px 8px; border-radius: 10px;
+    z-index: 1;
 }
 .badge-nuevo { background: var(--ow-orange); color: var(--ow-bg-dark); }
 .badge-popular { background: #c0392b; color: #fff; }
@@ -101,20 +116,22 @@
 
 .ow-card-body { padding: 0.8rem 0.9rem 1rem; }
 .ow-card-title {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: var(--ow-font-display);
     font-size: 1rem; font-weight: 700;
     color: var(--ow-cream); margin-bottom: 0.2rem;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.ow-card-meta { font-size: 0.78rem; color: rgba(234,181,111,0.6); margin-bottom: 0.5rem; }
+.ow-card-meta { font-family: var(--ow-font-text); font-size: 0.8rem; color: rgba(234,181,111,0.65); margin-bottom: 0.5rem; }
 .ow-genre-tag {
-    display: inline-block; font-size: 0.68rem;
+    font-family: var(--ow-font-text);
+    display: inline-block; font-size: 0.7rem;
     background: rgba(227,114,57,0.15);
     border: 1px solid rgba(227,114,57,0.3);
     color: var(--ow-peach);
     border-radius: 8px; padding: 1px 8px; margin: 1px;
 }
 .ow-card-footer-btn {
+    font-family: var(--ow-font-text);
     display: block; margin-top: 0.7rem;
     background: transparent;
     border: 1px solid var(--ow-orange);
@@ -128,7 +145,6 @@
     color: var(--ow-bg-dark);
 }
 
-/* ── Planes — estilo streaming ── */
 .planes-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
 .plan-card {
     background: var(--ow-bg);
@@ -144,13 +160,15 @@
     background: var(--ow-orange); color: var(--ow-bg-dark);
     font-size: 0.65rem; font-weight: 700; padding: 2px 30px;
     transform: rotate(35deg); letter-spacing: 0.5px;
+    white-space: nowrap;
 }
-.plan-name { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--ow-cream); margin-bottom: 0.4rem; }
+.plan-name { font-family: var(--ow-font-display); font-size: 1.3rem; font-weight: 700; color: var(--ow-cream); margin-bottom: 0.4rem; }
 .plan-price { font-size: 1.6rem; font-weight: 700; color: var(--ow-orange); margin-bottom: 0.3rem; }
 .plan-price span { font-size: 0.8rem; color: var(--ow-cream); font-weight: 400; }
-.plan-desc { font-size: 0.82rem; color: rgba(234,181,111,0.7); margin-bottom: 0.4rem; }
-.plan-screens { font-size: 0.8rem; color: var(--ow-peach); font-weight: 600; margin-bottom: 1rem; }
+.plan-desc { font-family: var(--ow-font-text); font-size: 0.85rem; line-height: 1.45; color: rgba(234,181,111,0.75); margin-bottom: 0.4rem; }
+.plan-screens { font-family: var(--ow-font-text); font-size: 0.85rem; color: var(--ow-peach); font-weight: 600; margin-bottom: 1rem; }
 .btn-plan {
+    font-family: var(--ow-font-text);
     display: block; width: 100%;
     background: var(--ow-orange); color: var(--ow-bg-dark);
     border: none; border-radius: 8px; font-weight: 700;
@@ -158,6 +176,7 @@
 }
 .btn-plan:hover { background: var(--ow-peach); }
 .btn-plan-ghost {
+    font-family: var(--ow-font-text);
     display: block; width: 100%;
     background: transparent; color: var(--ow-orange);
     border: 1px solid var(--ow-orange); border-radius: 8px; font-weight: 700;
@@ -165,8 +184,8 @@
 }
 .btn-plan-ghost:hover { background: var(--ow-orange); color: var(--ow-bg-dark); }
 
-/* ── Barra de búsqueda catálogo ── */
 .search-bar-ow {
+    font-family: var(--ow-font-text);
     background: var(--ow-bg-dark); border: 1px solid var(--ow-peach);
     color: var(--ow-cream); border-radius: 10px;
     padding: 0.55rem 1rem; font-size: 0.9rem; width: 100%;
@@ -180,16 +199,15 @@
 }
 .btn-buscar-cat:hover { background: var(--ow-peach); }
 .btn-limpiar-cat {
+    font-family: var(--ow-font-text);
     background: transparent; color: var(--ow-cream);
     border: 1px solid rgba(234,181,111,0.4); border-radius: 10px;
     padding: 0.55rem 1rem; font-size: 0.9rem; transition: all 0.2s;
 }
 .btn-limpiar-cat:hover { border-color: var(--ow-cream); }
 
-/* ── Separador ── */
 .ow-divider { border: none; border-top: 1px solid rgba(227,114,57,0.15); margin: 2.5rem 0; }
 
-/* ── Colores de fondo por card ── */
 .bg-c1 { background: linear-gradient(135deg,#1a3a4a,#254252); }
 .bg-c2 { background: linear-gradient(135deg,#2a1a3a,#1a1040); }
 .bg-c3 { background: linear-gradient(135deg,#3a1a1a,#2a1010); }
@@ -202,9 +220,8 @@
 .bg-c10{ background: linear-gradient(135deg,#2a2a1a,#181800); }
 </style>
 
-<!-- ══════════════════════════════════════════════════════
-     HERO CAROUSEL — portadas destacadas
-     ══════════════════════════════════════════════════════ -->
+<!-- 
+      -->
 <div id="heroCarousel" class="carousel slide hero-carousel"
      data-bs-ride="carousel" data-bs-interval="5000">
 
@@ -217,58 +234,55 @@
 
     <div class="carousel-inner">
 
-        <!-- Slide 1 -->
         <div class="carousel-item active">
-            <div class="hero-bg bg-c3">⚔️</div>
+            <div class="hero-bg bg-c3"><img class="hero-cover ow-cover" data-mal="16498" alt="" loading="eager"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="hero-badge">🔥 TENDENCIA</span>
-                <div class="hero-title">Attack on Titan</div>
-                <div class="hero-meta">Anime · 89 episodios · Acción, Drama</div>
-                <div class="hero-desc">La humanidad lucha por sobrevivir dentro de enormes murallas frente a gigantes devoradores llamados Titanes.</div>
-                <a href="catalogo.jsp" class="btn-hero-primary">▶ Ver ahora</a>
-                <button class="btn-hero-sec">+ Mi lista</button>
+                <span class="hero-badge"> TENDENCIA</span>
+                <div class="hero-title">Shingeki no Kyojin</div>
+                <div class="hero-meta">Anime  89 episodios Accion y drama</div>
+                <div class="hero-desc">La humanidad lucha por sobrevivir dentro de enormes murallas frente a gigantes devoradores llamados titanes.</div>
+                <a href="series.jsp" class="btn-hero-primary"> Mirar Ahora </a>
+                <a href="series.jsp" class="btn-hero-primary"> + Mi lista </a>
+                
             </div>
         </div>
 
-        <!-- Slide 2 -->
         <div class="carousel-item">
-            <div class="hero-bg bg-c2">🌀</div>
+            <div class="hero-bg bg-c2"><img class="hero-cover ow-cover" data-mal="40748" alt="" loading="lazy"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="hero-badge">✨ ESTRENO</span>
+                <span class="hero-badge">ESTRENO</span>
                 <div class="hero-title">Jujutsu Kaisen</div>
-                <div class="hero-meta">Anime · 47 episodios · Acción, Sobrenatural</div>
-                <div class="hero-desc">Yuji Itadori ingiere un dedo de un maldito para salvar a sus amigos y es absorbido por el más poderoso de todos.</div>
-                <a href="catalogo.jsp" class="btn-hero-primary">▶ Ver ahora</a>
+                <div class="hero-meta">Anime 47 episodios � Accion y sobrenatural</div>
+                <div class="hero-desc">Yuji Itadori ingiere un dedo de un maldito para salvar a sus amigos y queda ligado al espiritu mas poderoso de todos.</div>
+                <a href="series.jsp" class="btn-hero-primary">Ver ahora</a>
                 <button class="btn-hero-sec">+ Mi lista</button>
             </div>
         </div>
 
-        <!-- Slide 3 (Película) -->
         <div class="carousel-item">
-            <div class="hero-bg bg-c5">🌸</div>
+            <div class="hero-bg bg-c5"><img class="hero-cover ow-cover" data-mal="32281" alt="" loading="lazy"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="hero-badge">🎬 PELÍCULA</span>
-                <div class="hero-title">Your Name</div>
-                <div class="hero-meta">Anime · 2016 · Romance, Fantasía</div>
-                <div class="hero-desc">Dos jóvenes se dan cuenta de que están intercambiando cuerpos mientras duermen, compartiendo vidas completamente distintas.</div>
-                <a href="catalogo.jsp" class="btn-hero-primary">▶ Ver ahora</a>
+                <span class="hero-badge">peliculas</span>
+                <div class="hero-title">your name</div>
+                <div class="hero-meta">Pelicula de anime � 2016 � Romance y fantasia</div>
+                <div class="hero-desc">Dos jovenes descubren que intercambian cuerpos al dormir y comparten vidas totalmente distintas.</div>
+                <a href="peliculas.jsp" class="btn-hero-primary"> Ver ahora</a>
                 <button class="btn-hero-sec">+ Mi lista</button>
             </div>
         </div>
 
-        <!-- Slide 4 -->
         <div class="carousel-item">
-            <div class="hero-bg bg-c7">💀</div>
+            <div class="hero-bg bg-c7"><img class="hero-cover ow-cover" data-mal="1535" alt="" loading="lazy"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="hero-badge">🏆 CLÁSICO</span>
+                <span class="hero-badge">CLASICO</span>
                 <div class="hero-title">Death Note</div>
-                <div class="hero-meta">Anime · 37 episodios · Thriller, Psicológico</div>
-                <div class="hero-desc">Light Yagami encuentra un cuaderno sobrenatural que le permite matar a cualquier persona. Comienza un duelo intelectual sin precedentes.</div>
-                <a href="catalogo.jsp" class="btn-hero-primary">▶ Ver ahora</a>
+                <div class="hero-meta">Anime  37 episodios Thriller y psicologico</div>
+                <div class="hero-desc">Light Yagami encuentra un cuaderno sobrenatural con el que puede quitarle la vida a quien escriba . Empieza un duelo intelectual sin precedentes.</div>
+                <a href="series.jsp" class="btn-hero-primary">Ver ahora</a>
                 <button class="btn-hero-sec">+ Mi lista</button>
             </div>
         </div>
@@ -283,114 +297,112 @@
     </button>
 </div>
 
-<!-- ══════════════════════════════════════════════════════
-     SERIES DESTACADAS — datos de Pantalla.java (datosSeries)
-     ══════════════════════════════════════════════════════ -->
+      
 <div class="section-title">
-    📺 Series <span class="section-sub">— del catálogo original</span>
+    Series <span class="section-sub"> Destacadas del catalogo</span>
 </div>
 
-<!-- Búsqueda series (equivalente al jTextField2 + jButton2 de Pantalla.java) -->
 <div class="d-flex gap-2 mb-3">
     <input class="search-bar-ow" type="text" id="busqSeries"
-           placeholder="Buscar serie..." oninput="filtrarSeries()">
+           placeholder="Buscar serie" lang="es-419" oninput="filtrarSeries()">
     <button class="btn-limpiar-cat" onclick="limpiarSeries()">Limpiar</button>
 </div>
 
 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 mb-2" id="gridSeries">
 
-    <div class="col serie-item" data-titulo="One Piece" data-genero="Aventura, Acción">
+    <div class="col serie-item" data-titulo="One Piece" data-genero="Aventura, Accion">
         <div class="ow-card">
             <div class="ow-card-img bg-c1">
-                🏴‍☠️
+                <img class="ow-cover" data-mal="21" alt="One Piece" loading="lazy">
                 <span class="ow-card-badge badge-popular">POPULAR</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">One Piece</div>
-                <div class="ow-card-meta">Anime · 1000+ eps</div>
+                <div class="ow-card-meta">Anime � mas de 1000 episodios</div>
                 <span class="ow-genre-tag">Aventura</span>
-                <span class="ow-genre-tag">Acción</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <span class="ow-genre-tag">Accion</span>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col serie-item" data-titulo="Naruto Shippuden" data-genero="Acción, Ninja">
+    <div class="col serie-item" data-titulo="Naruto Shippuden" data-genero="Acccion, ninja">
         <div class="ow-card">
             <div class="ow-card-img bg-c4">
-                🍃
-                <span class="ow-card-badge badge-clasico">CLÁSICO</span>
+                <img class="ow-cover" data-mal="1735" alt="Naruto Shippuden" loading="lazy">
+                <span class="ow-card-badge badge-clasico">CLASICO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Naruto Shippuden</div>
-                <div class="ow-card-meta">Anime · 500 eps</div>
-                <span class="ow-genre-tag">Acción</span>
+                <div class="ow-card-meta">Anime � 500 episodios</div>
+                <span class="ow-genre-tag">Accion</span>
                 <span class="ow-genre-tag">Ninja</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col serie-item" data-titulo="Attack on Titan" data-genero="Acción, Drama">
+    <div class="col serie-item" data-titulo="Attack on Titan" data-genero="Accion, Drama">
         <div class="ow-card">
             <div class="ow-card-img bg-c3">
-                ⚔️
+                <img class="ow-cover" data-mal="16498" alt="Attack on Titan" loading="lazy">
                 <span class="ow-card-badge badge-popular">POPULAR</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Attack on Titan</div>
-                <div class="ow-card-meta">Anime · 89 eps</div>
-                <span class="ow-genre-tag">Acción</span>
+                <div class="ow-card-meta">Anime 89 episodios</div>
+                <span class="ow-genre-tag">Accion</span>
                 <span class="ow-genre-tag">Drama</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col serie-item" data-titulo="Demon Slayer" data-genero="Acción, Fantasía">
+    <div class="col serie-item" data-titulo="Kimetsu no Yaiba Demon Slayer" data-genero="Accion, Fantasia">
         <div class="ow-card">
             <div class="ow-card-img bg-c6">
-                🌸
+                <img class="ow-cover" data-mal="38000" alt="Kimetsu no Yaiba" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
-                <div class="ow-card-title">Demon Slayer</div>
-                <div class="ow-card-meta">Anime · 55 eps</div>
-                <span class="ow-genre-tag">Acción</span>
-                <span class="ow-genre-tag">Fantasía</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <div class="ow-card-title">Kimetsu no Yaiba</div>
+                <div class="ow-card-meta">Anime 55 episodios</div>
+                <span class="ow-genre-tag">Accion</span>
+                <span class="ow-genre-tag">Fantasia</span>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col serie-item" data-titulo="My Hero Academia" data-genero="Superhéroes, Acción">
+    <div class="col serie-item" data-titulo="My Hero Academia" data-genero="Superhéroes, Accion">
         <div class="ow-card">
             <div class="ow-card-img bg-c8">
-                💥
+                <img class="ow-cover" data-mal="31964" alt="My Hero Academia" loading="lazy">
                 <span class="ow-card-badge badge-popular">POPULAR</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">My Hero Academia</div>
-                <div class="ow-card-meta">Anime · 138 eps</div>
-                <span class="ow-genre-tag">Superhéroes</span>
-                <span class="ow-genre-tag">Acción</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <div class="ow-card-meta">Anime 138 episodios</div>
+                <span class="ow-genre-tag">Superheroes</span>
+                <span class="ow-genre-tag">Accion</span>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col serie-item" data-titulo="Jujutsu Kaisen" data-genero="Acción, Sobrenatural">
+    <div class="col serie-item" data-titulo="Jujutsu Kaisen" data-genero="Accion, Sobrenatural">
+        <a href="index.jsp"></a>
         <div class="ow-card">
             <div class="ow-card-img bg-c2">
-                🌀
+                <img class="ow-cover" data-mal="40748" alt="Jujutsu Kaisen" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Jujutsu Kaisen</div>
-                <div class="ow-card-meta">Anime · 47 eps</div>
-                <span class="ow-genre-tag">Acción</span>
+                <div class="ow-card-meta">Anime� 47 episodios</div>
+                <span class="ow-genre-tag">Accion</span>
                 <span class="ow-genre-tag">Sobrenatural</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
@@ -398,63 +410,63 @@
     <div class="col serie-item" data-titulo="Death Note" data-genero="Thriller, Psicológico">
         <div class="ow-card">
             <div class="ow-card-img bg-c7">
-                💀
-                <span class="ow-card-badge badge-clasico">CLÁSICO</span>
+                <img class="ow-cover" data-mal="1535" alt="Death Note" loading="lazy">
+                <span class="ow-card-badge badge-clasico">CLASICO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Death Note</div>
-                <div class="ow-card-meta">Anime · 37 eps</div>
+                <div class="ow-card-meta">Anime� 37 episodios</div>
                 <span class="ow-genre-tag">Thriller</span>
-                <span class="ow-genre-tag">Psicológico</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <span class="ow-genre-tag">Psicologico</span>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col serie-item" data-titulo="Fullmetal Alchemist: Brotherhood" data-genero="Aventura, Fantasía">
+    <div class="col serie-item" data-titulo="Fullmetal Alchemist: Brotherhood" data-genero="Aventura, Fantadis">
         <div class="ow-card">
             <div class="ow-card-img bg-c9">
-                ⚗️
-                <span class="ow-card-badge badge-clasico">CLÁSICO</span>
+                <img class="ow-cover" data-mal="5114" alt="Fullmetal Alchemist Brotherhood" loading="lazy">
+                <span class="ow-card-badge badge-clasico">CLASICO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">FMA Brotherhood</div>
-                <div class="ow-card-meta">Anime · 64 eps</div>
+                <div class="ow-card-meta">Anime � 64 episodios</div>
                 <span class="ow-genre-tag">Aventura</span>
-                <span class="ow-genre-tag">Fantasía</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <span class="ow-genre-tag">Fantasia</span>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col serie-item" data-titulo="Chainsaw Man" data-genero="Acción, Horror">
+    <div class="col serie-item" data-titulo="Chainsaw Man" data-genero="Accion, Horror">
         <div class="ow-card">
             <div class="ow-card-img bg-c10">
-                🪚
+                <img class="ow-cover" data-mal="44511" alt="Chainsaw Man" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Chainsaw Man</div>
-                <div class="ow-card-meta">Anime · 12 eps</div>
-                <span class="ow-genre-tag">Acción</span>
+                <div class="ow-card-meta">Anime� 12 episodios</div>
+                <span class="ow-genre-tag">Accion</span>
                 <span class="ow-genre-tag">Horror</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col serie-item" data-titulo="Spy x Family" data-genero="Comedia, Acción">
+    <div class="col serie-item" data-titulo="Spy x Family" data-genero="Comedia, Accion">
         <div class="ow-card">
             <div class="ow-card-img bg-c5">
-                🕵️
+                <img class="ow-cover" data-mal="50265" alt="Spy x Family" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Spy x Family</div>
-                <div class="ow-card-meta">Anime · 37 eps</div>
+                <div class="ow-card-meta">Anime  37 episodios</div>
                 <span class="ow-genre-tag">Comedia</span>
-                <span class="ow-genre-tag">Acción</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <span class="ow-genre-tag">Accion</span>
+                <a href="series.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
@@ -462,150 +474,152 @@
 </div>
 
 <div id="sinResultadosSeries" style="display:none; color:var(--ow-cream); text-align:center; padding:2rem 0; opacity:0.6;">
-    Sin resultados para tu búsqueda.
+    No hay resultados para tu busquedad.
 </div>
 
 <hr class="ow-divider">
 
-<!-- ══════════════════════════════════════════════════════
-     PELÍCULAS — datos de Pantalla.java (datosPeliculas)
-     ══════════════════════════════════════════════════════ -->
+
 <div class="section-title">
-    🎬 Películas <span class="section-sub">— del catálogo original</span>
+    Peliculas<span class="section-sub">destacadas del catalogo</span>
 </div>
 
 <div class="d-flex gap-2 mb-3">
     <input class="search-bar-ow" type="text" id="busqPelis"
-           placeholder="Buscar película..." oninput="filtrarPelis()">
+           placeholder="Buscar peliculas" lang="es-419" oninput="filtrarPelis()">
     <button class="btn-limpiar-cat" onclick="limpiarPelis()">Limpiar</button>
 </div>
 
 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 mb-2" id="gridPelis">
 
-    <div class="col peli-item" data-titulo="Your Name" data-genero="Romance, Fantasía">
+    <div class="col peli-item" data-titulo="El viaje de Chihiro" data-genero="Fantasia, Aventura">
         <div class="ow-card">
-            <div class="ow-card-img bg-c5">
-                🌠
-                <span class="ow-card-badge badge-popular">POPULAR</span>
+            <div class="ow-card-img bg-c9">
+             <img src="https://th.bing.com/th/id/R.17dc82c18e7a844e7d0606e29319c5eb?rik=0TCteZrftp2Dnw&pid=ImgRaw&r=0" alt="Tumba">
+
+                <span class="ow-card-badge badge-clasico">CLASICO</span>
             </div>
             <div class="ow-card-body">
-                <div class="ow-card-title">Your Name</div>
-                <div class="ow-card-meta">Anime · 2016</div>
-                <span class="ow-genre-tag">Romance</span>
-                <span class="ow-genre-tag">Fantasía</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <div class="ow-card-title">La tumba de las lucienagas</div>
+                <div class="ow-card-meta">Pelicula . 2001</div>
+                <span class="ow-genre-tag">Fantasia</span>
+                <span class="ow-genre-tag">Aventura</span>
+                <a href="peliculas.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col peli-item" data-titulo="Akira" data-genero="Ciencia ficción, Acción">
+    <div class="col peli-item" data-titulo="Akira" data-genero="Ciencia ficción, Accion">
         <div class="ow-card">
             <div class="ow-card-img bg-c7">
-                🏍️
-                <span class="ow-card-badge badge-clasico">CLÁSICO</span>
+                <img class="ow-cover" data-mal="572" alt="Akira" loading="lazy">
+                <span class="ow-card-badge badge-clasico">CLASICO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Akira</div>
-                <div class="ow-card-meta">Anime · 1988</div>
-                <span class="ow-genre-tag">Sci-Fi</span>
-                <span class="ow-genre-tag">Acción</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <div class="ow-card-meta">Pelicula� 1988</div>
+                <span class="ow-genre-tag">Ciencia ficcion</span>
+                <span class="ow-genre-tag">AcciON</span>
+                <a href="peliculas.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col peli-item" data-titulo="El viaje de Chihiro" data-genero="Fantasía, Aventura">
+    <div class="col peli-item" data-titulo="El viaje de Chihiro" data-genero="Fantasia, Aventura">
         <div class="ow-card">
             <div class="ow-card-img bg-c9">
-                🐉
-                <span class="ow-card-badge badge-clasico">CLÁSICO</span>
+                <img class="ow-cover" data-mal="199" alt="El viaje de Chihiro" loading="lazy">
+                <span class="ow-card-badge badge-clasico">CLASICO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">El viaje de Chihiro</div>
-                <div class="ow-card-meta">Anime · 2001</div>
-                <span class="ow-genre-tag">Fantasía</span>
+                <div class="ow-card-meta">Peliculas . 2001</div>
+                <span class="ow-genre-tag">Fantasia</span>
                 <span class="ow-genre-tag">Aventura</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <a href="peliculas.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col peli-item" data-titulo="Demon Slayer: Mugen Train" data-genero="Acción, Fantasía">
+    <div class="col peli-item" data-titulo="Kimetsu no Yaiba Mugen Train" data-genero="Accion, Fantasia">
         <div class="ow-card">
             <div class="ow-card-img bg-c3">
-                🚂
+                <img class="ow-cover" data-mal="40456" alt="Kimetsu no Yaiba: Tren infinito" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
-                <div class="ow-card-title">DS: Mugen Train</div>
-                <div class="ow-card-meta">Anime · 2020</div>
-                <span class="ow-genre-tag">Acción</span>
-                <span class="ow-genre-tag">Fantasía</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <div class="ow-card-title">Kimetsu no Yaiba 1</div>
+                <div class="ow-card-meta">Peliculas2020</div>
+                <span class="ow-genre-tag">Accion</span>
+                <span class="ow-genre-tag">Fantasia</span>
+                <a href="peliculas.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
-
-    <div class="col peli-item" data-titulo="One Piece Film Red" data-genero="Aventura, Acción">
+    
+    <div class="col peli-item" data-titulo="Kimetsu no Yaiba Mugen Train" data-genero="Accion, Fantasia">
         <div class="ow-card">
-            <div class="ow-card-img bg-c6">
-                🎵
+            <div class="ow-card-img bg-c3">
+                <img class="ow-cover" data-mal="40456" alt="Kimetsu no Yaiba: Tren infinito" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
-                <div class="ow-card-title">One Piece Film Red</div>
-                <div class="ow-card-meta">Anime · 2022</div>
-                <span class="ow-genre-tag">Aventura</span>
-                <span class="ow-genre-tag">Acción</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <div class="ow-card-title">Kimetsu no Yaiba 2</div>
+                <div class="ow-card-meta">Peliculas2020</div>
+                <span class="ow-genre-tag">Accion</span>
+                <span class="ow-genre-tag">Fantasia</span>
+                <a href="peliculas.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col peli-item" data-titulo="Suzume" data-genero="Aventura, Romance">
-        <div class="ow-card">
-            <div class="ow-card-img bg-c4">
-                🚪
-                <span class="ow-card-badge badge-nuevo">NUEVO</span>
-            </div>
-            <div class="ow-card-body">
-                <div class="ow-card-title">Suzume</div>
-                <div class="ow-card-meta">Anime · 2022</div>
-                <span class="ow-genre-tag">Aventura</span>
-                <span class="ow-genre-tag">Romance</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col peli-item" data-titulo="Princess Mononoke" data-genero="Fantasía, Aventura">
+   
+        <div class="col peli-item" data-titulo="La princesa Mononoke" data-genero="Fantasia, Aventura">
         <div class="ow-card">
             <div class="ow-card-img bg-c5">
-                🐺
-                <span class="ow-card-badge badge-clasico">CLÁSICO</span>
+                <img class="ow-cover" data-mal="164" alt="La princesa Mononoke" loading="lazy">
+                <span class="ow-card-badge badge-clasico">CLASICO</span>
             </div>
             <div class="ow-card-body">
-                <div class="ow-card-title">Princess Mononoke</div>
-                <div class="ow-card-meta">Anime · 1997</div>
-                <span class="ow-genre-tag">Fantasía</span>
+                <div class="ow-card-title">La princesa Mononoke</div>
+                <div class="ow-card-meta">Pelicula  1997</div>
+                <span class="ow-genre-tag">Fantasia</span>
                 <span class="ow-genre-tag">Aventura</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <a href="peliculas.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
 
-    <div class="col peli-item" data-titulo="Jujutsu Kaisen 0" data-genero="Acción, Sobrenatural">
+
+    <div class="col peli-item" data-titulo="La princesa Mononoke" data-genero="Fantasia, Aventura">
+        <div class="ow-card">
+            <div class="ow-card-img bg-c5">
+              <img src="https://voicefilm.com/wp-content/uploads/2022/02/Every-Super-Saiyan-Level-Ranked-11.jpg" alt="Tractor agr�cola">
+
+                <span class="ow-card-badge badge-clasico">CLASICO</span>
+            </div>
+            <div class="ow-card-body">
+                <div class="ow-card-title">La luz del olimpo</div>
+                <div class="ow-card-meta">Pelicula  1997</div>
+                <span class="ow-genre-tag">Accion</span>
+                <span class="ow-genre-tag">Aventura</span>
+                <a href="peliculas.jsp" class="ow-card-footer-btn">Ver ahora</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col peli-item" data-titulo="Jujutsu Kaisen 0" data-genero="Accion, Sobrenatural">
         <div class="ow-card">
             <div class="ow-card-img bg-c2">
-                👁️
+                <img class="ow-cover" data-mal="48561" alt="Jujutsu Kaisen 0" loading="lazy">
                 <span class="ow-card-badge badge-nuevo">NUEVO</span>
             </div>
             <div class="ow-card-body">
                 <div class="ow-card-title">Jujutsu Kaisen 0</div>
-                <div class="ow-card-meta">Anime · 2021</div>
-                <span class="ow-genre-tag">Acción</span>
+                <div class="ow-card-meta">CLASICO2021</div>
+                <span class="ow-genre-tag">Accion</span>
                 <span class="ow-genre-tag">Sobrenatural</span>
-                <a href="catalogo.jsp" class="ow-card-footer-btn">Ver ahora</a>
+                <a href="peliculas.jsp" class="ow-card-footer-btn">Ver ahora</a>
             </div>
         </div>
     </div>
@@ -613,62 +627,55 @@
 </div>
 
 <div id="sinResultadosPelis" style="display:none; color:var(--ow-cream); text-align:center; padding:2rem 0; opacity:0.6;">
-    Sin resultados para tu búsqueda.
+    No hay resultados para tu búsqueda.
 </div>
 
 <hr class="ow-divider">
 
-<!-- ══════════════════════════════════════════════════════
-     PLANES — datos de Pantalla.java (modeloPlanes / PESTAÑA INICIO)
-     ══════════════════════════════════════════════════════ -->
+
 <div class="section-title">
-    💎 Planes mensuales <span class="section-sub">— elige el tuyo</span>
+  Planes mensuales <span class="section-sub"> No te quedes sin tu plan</span>
 </div>
 
 <div class="planes-row mb-4">
 
-    <!-- Básico -->
     <div class="plan-card">
-        <div class="plan-name">Básico</div>
+        <div class="plan-recommended">COMUN</div>
+        <div class="plan-name">Basico</div>
         <div class="plan-price">$19.900 <span>/mes</span></div>
-        <div class="plan-desc">Películas y series estándar</div>
-        <div class="plan-screens">📺 1 pantalla</div>
-        <button class="btn-plan-ghost" onclick="elegirPlan('Básico')">Elegir plan</button>
+        <div class="plan-desc">CLASICOy series estandar</div>
+        <div class="plan-screens">1 pantalla</div>
+        <button class="btn-plan-ghost" onclick="elegirPlan('Basico')">Elegir plan</button>
     </div>
 
-    <!-- Estándar -->
     <div class="plan-card">
-        <div class="plan-name">Estándar</div>
+        <div class="plan-name">Estandar</div>
         <div class="plan-price">$29.900 <span>/mes</span></div>
-        <div class="plan-desc">Todo Básico + HD</div>
-        <div class="plan-screens">📺📺 2 pantallas</div>
-        <button class="btn-plan-ghost" onclick="elegirPlan('Estándar')">Elegir plan</button>
+        <div class="plan-desc">Todo Basico + HD</div>
+        <div class="plan-screens"> 2 pantallas</div>
+        <button class="btn-plan-ghost" onclick="elegirPlan('Estandar')">Elegir plan</button>
     </div>
 
-    <!-- Premium — destacado -->
     <div class="plan-card featured">
-        <div class="plan-recommended">MEJOR</div>
+        <div class="plan-recommended">RECOMENDADO</div>
         <div class="plan-name">Premium</div>
         <div class="plan-price">$39.900 <span>/mes</span></div>
-        <div class="plan-desc">Todo Estándar + 4K</div>
-        <div class="plan-screens">📺📺📺📺 4 pantallas</div>
+        <div class="plan-desc">Todo Estandar + 4K</div>
+        <div class="plan-screens">4 pantallas</div>
         <button class="btn-plan" onclick="elegirPlan('Premium')">Elegir plan</button>
     </div>
 
-    <!-- Familia -->
     <div class="plan-card">
+        <div class="plan-recommended">RECOMENDADO</div>
         <div class="plan-name">Familia</div>
         <div class="plan-price">$49.900 <span>/mes</span></div>
         <div class="plan-desc">Todo Premium + contenido infantil</div>
-        <div class="plan-screens">📺×6 6 pantallas</div>
-        <button class="btn-plan-ghost" onclick="elegirPlan('Familia')">Elegir plan</button>
+        <div class="plan-screens"> 6 pantallas</div>
+        <button class="btn-plan" onclick="elegirPlan('Premium')">Elegir plan</button>
     </div>
 
 </div>
 
-<!-- ══════════════════════════════════════════════════════
-     JAVASCRIPT — búsqueda fiel a jButton1/jButton2 de Pantalla.java
-     ══════════════════════════════════════════════════════ -->
 <script>
     function filtrarSeries() {
         const q = document.getElementById('busqSeries').value.toLowerCase();
@@ -709,9 +716,9 @@
     function elegirPlan(nombre) {
         const usuario = sessionStorage.getItem('ow_usuario_activo');
         if (usuario) {
-            alert('Plan ' + nombre + ' seleccionado para ' + usuario + '. ¡Gracias!');
+            alert('Plan ' + nombre + ' seleccionado para ' + usuario + '. ¡Gracias por elegirnos!');
         } else {
-            if (confirm('Para elegir un plan necesitas iniciar sesión. ¿Ir al login?')) {
+            if (confirm('Para elegir un plan tenemos que iniciar sesion. �Quieres ir al inicio de sesion?')) {
                 window.location.href = 'login.jsp';
             }
         }

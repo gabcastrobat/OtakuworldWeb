@@ -1,10 +1,16 @@
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\Servlets\RegistroServlet.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\Modelo\Usuario.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\com\mycompany\otakuworldweb\JakartaRestConfiguration.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\Modelo\Persona.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\Servlets\LoginServlet.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\Modelo\ElementoLista.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\Servlets\MiListaServlet.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\Modelo\UsuarioDAO.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\Servlets\AppListener.java
-C:\Users\PC\OneDrive\Escritorio\OtakuworldWebFinal\OtakuworldWeb\src\main\java\com\mycompany\otakuworldweb\resources\JakartaEE10Resource.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Servlets\LoginServlet.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\com\mycompany\otakuworldweb\JakartaRestConfiguration.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Modelo\UsuarioDAO.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Servlets\LoginServlets.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Modelo\Anime.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Modelo\AnimeDAO.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Servlets\MiListaServlet.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Modelo\ElementoLista.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Servlets\RegistroServlets.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Servlets\AppListener.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Modelo\Usuario.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Servlets\AnimeServlet.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Servlets\LogoutServlets.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Servlets\RegistroServlet.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\com\mycompany\otakuworldweb\resources\JakartaEE10Resource.java
+D:\2026\Univer\apo\Otakuworld web\OtakuworldWeb\src\main\java\Modelo\Persona.java

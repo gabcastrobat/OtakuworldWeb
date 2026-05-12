@@ -15,6 +15,13 @@ public class Usuario {
     // Constructor vacio
     public Usuario() {}
 
+    // Constructor con 3 argumentos (usado en RegistroServlets)
+    public Usuario(String nombre, String correo, String clave) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.clave = clave;
+    }
+
     // Constructor completo
     public Usuario(int id, String nombre, String correo, String clave, String avatarUrl) {
         this.id        = id;
@@ -24,7 +31,7 @@ public class Usuario {
         this.avatarUrl = avatarUrl;
     }
 
-    // ── Getters y Setters ────────────────────────────────────────────────────
+    // Getters y Setters
 
     public int getId()                     { return id; }
     public void setId(int id)              { this.id = id; }

@@ -356,36 +356,6 @@
 
 </div>
 
-<!-- Tabla comparativa -->
-<div class="section-title-alt">¿Qué incluye cada plan?</div>
-
-<div class="table-responsive" style="max-width:960px;margin:0 auto 4rem;">
-<table class="compare-table">
-    <thead>
-        <tr>
-            <th>Característica</th>
-            <th>Básico</th>
-            <th>Premium</th>
-            <th>Familia</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>Precio mensual</td><td>$19.900</td><td>$39.900</td><td>$49.900</td></tr>
-        <tr><td>Pantallas simultáneas</td><td>1</td><td>4</td><td>6</td></tr>
-        <tr><td>Calidad de video</td><td>SD</td><td>4K</td><td>4K</td></tr>
-        <tr><td>Sin anuncios</td><td><span class="check">?</span></td><td><span class="check">?</span></td><td><span class="check">?</span></td></tr>
-        <tr><td>Manga digital incluido</td><td><span class="check">?</span></td><td><span class="check">?</span></td><td><span class="check">?</span></td></tr>
-        <tr><td>Descarga sin conexión</td><td><span class="cross">?</span></td><td><span class="check">?</span></td><td><span class="check">?</span></td></tr>
-        <tr><td>Descuento en Tienda</td><td><span class="cross">?</span></td><td>$15.000 </td><td>$25.000 </td></tr>
-        <tr><td>Envío gratis en Tienda</td><td><span class="cross">?</span></td><td><span class="cross">?</span></td><td><span class="check">?</span></td></tr>
-        <tr><td>Kit de bienvenida exclusivo</td><td><span class="cross">?</span></td><td><span class="cross">?</span></td><td><span class="check">?</span></td></tr>
-    </tbody>
-</table>
-</div>
-
-<!-- Toast -->
-<div class="ow-toast" id="owToast"></div>
-
 <script>
     function elegirPlan(nombre) {
         <%

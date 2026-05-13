@@ -13,7 +13,7 @@ public class Usuario {
     private String avatarUrl;    // URL de imagen de perfil (puede ser null)
 
     // Constructor vacio
-    public Usuario() {}
+    public Usuario(String nombre1, String correo1, String clave1) {}
 
     // Constructor completo
     public Usuario(int id, String nombre, String correo, String clave, String avatarUrl) {
